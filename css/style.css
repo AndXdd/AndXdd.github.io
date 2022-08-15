@@ -1,0 +1,228 @@
+body {
+    font: 10px / 36px ;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(206, 206, 206);
+}   
+
+.judul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px ;
+    text-shadow: 2px 2px 2px white;
+}
+
+.container {
+    box-shadow: 0px 0px 5px rgba(11, 11, 11, .5);
+    border-radius: 20px;
+    width: 600px;   
+    background-color: white;
+    margin: auto;
+    padding: 30px;
+
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    /* Tambahkan Overflow Agar Elemen Dalam li bisa Di
+    Ubah */
+    /* overflow: hidden; */
+    border: 8px solid grey;
+    /* Tambahkan Float Ke Kiri Agar Gambar
+    Berikutnya Menjadi Ke Kiri */
+    float: left;
+    /* Tambahkan Position Relative Agar Ojek Yang
+    Berada Dalam li Hanya Tetap Berada Dalam li */
+    position: relative;
+    margin-left: 45px;
+}
+
+.gallery li img, 
+.gallery li,
+.gallery li span
+ {
+    border-radius: 100px;
+
+}
+
+
+.gallery li span {
+/* Jika Ingin Mengedit Span Makan Ubah Dulu Displaynya */
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(141, 139, 139, .5);
+    text-align: center;
+    line-height: 120px;
+    /* Tambahkan Position Absolute Agar Masuk Kedalam 
+    Parent Yang Sama Dengan Gallery*/
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    color: grey;
+    text-shadow:1px 1px 1px white;
+    opacity:0;
+    transition: .3s;
+
+    
+}
+
+/* Transition Hover */
+
+.gallery li a:hover span {
+    
+    opacity: 1;
+}
+
+
+
+/* Agar Container Tidak Hancur Maka Setelah
+Penggunaan Float Tambahkan Clear */
+
+
+.clear {
+
+    clear: both;
+}
+
+/* Overlay */
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    background-color: rgba(98, 96, 96,0);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    text-align: center;
+    padding: 100px 0;
+    /* Tambahkan 0 Pada Padding Kiri Dan Kanan
+    Agar Saat Di Pencet Bisa Rata Tengah Dan Tidak
+    Berantakan */
+    
+    
+}
+
+/* Gunakan kode (target untuk menggantikan hover)
+ Untuk Membuat */
+
+ .overlay:target {
+    background-color: rgba(98, 96, 96, .8);
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    
+
+}
+
+
+.overlay img {
+    margin-top: 20px;
+    max-height: 100%;
+
+}
+
+
+.overlay:target img { 
+    border-radius: 0%;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px 5px rgba(18, 17, 17, .5);
+    animation: zoomeffect 1s;
+
+}
+
+
+/* Animasi */
+@keyframes zoomeffect {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    
+
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+}
+
+
+.overlay .close {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    right: 47%;
+    top: 50px;
+    text-decoration: none;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    opacity: 0;
+    transition: 1s;
+    
+}
+
+.overlay:hover .close {
+
+    opacity: 1;
+}
+
+
+/* Button */
+
+.next{
+
+    width: 50px;
+    height: 50px;
+    background-image: url(/image/Button/Next.png);
+    /* Gunakan Code Position Absolute
+    Agar Dapat Mengedit Gambar Yang Berda 
+    Di Dalam Link Tanpa Mengganggu Display */
+    position: absolute;
+    top: 47%;
+    text-indent: -999999%;
+    margin-left: 20px;
+
+}
+
+.preview {
+
+    width: 50px;
+    height: 50px;
+    background-image: url(/image/Button/Back.png);
+    /* Gunakan Code Position Absolute
+    Agar Dapat Mengedit Gambar Yang Berda 
+    Di Dalam Link Tanpa Mengganggu Display */
+    position: absolute;
+    top: 47%;
+    left:29%;
+    text-indent: 1111px;
+
+}
+
+
+.nextsakura {
+    width: 50px;
+    height: 50px;
+    background-image: url(/image/Button/Next.png);
+    /* Gunakan Code Position Absolute
+    Agar Dapat Mengedit Gambar Yang Berda 
+    Di Dalam Link Tanpa Mengganggu Display */
+    position: absolute;
+    top: 47%;
+    text-indent: 10000%;
+    margin-left: 20px;
+}
